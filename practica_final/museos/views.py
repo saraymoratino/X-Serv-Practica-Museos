@@ -91,5 +91,5 @@ def info_museos(request, idx):
 	return HttpResponse(info_total)
 
 def about (request):
-	template = get_template('index.html')
+	template = get_template('pag_principal.html')
 	return HttpResponse(template.render(Context()))
