@@ -1,0 +1,94 @@
+{% load staticfiles %}
+
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{% static 'estilo.css' %}">
+		<link rel="shortcut icon" href="http://1.bp.blogspot.com/-NJVva85kbH0/UqSGae7X3-I/AAAAAAAAFyg/EDnaBwqwuQM/s1600/el+grito+detalle+1.jpg" />
+
+	</head>
+
+
+	<body>
+
+		<div id="principal">
+
+			<div id="cabecera">
+				{% if user.is_authenticated %}
+						<p align="right">hola {{user.username}}</p>
+				{% else %}
+					<form method = 'POST' action ='/'>
+						<p align="right">
+							<input type="text" size="14" maxlength="30" placeholder="Usuario" value="" name="usuario" autocomplete="off"><br>
+							<input type="Password" size="14" maxlength="30" placeholder="Contraseña" value="" name="contraseña" autocomplete="off"><br>
+							<input type="submit" name="submit" value="Login" />
+							<input type="submit" name="submit" value="Register" />
+						</p>
+					</form>
+				{% endif %}
+			</div>
+
+			<div id="menu">
+				<ul>
+					<li><a href="/">Inicio</a></li>
+					<li><a href="#">Area personal</a></li>
+					<li><a href="/museos">Museos</a></li>
+					<li><a href="/about">About</a></li>
+				</ul>
+			</div>
+
+			<div id="pag_personal">
+				<b><a style="color:#2ab9e7">PÁGINAS PERSONALES</a></b>
+			</div>
+
+			<div id="contenido">
+				<font face="Courier" size="3">
+					{% if num_accesible == 1 %}
+						<form method = 'POST' , action ='/'>
+							<input type="submit" name="submit" value="Mostrar todos los museos"/>
+							<input type="hidden" name="num_accesible" value='0'/>
+						</form>
+
+						{% for mus in mus_accesibles %}
+							<p><b><a style="color: #fc8b52">NOMBRE MUSEO: <a style="color:#2ab9e7" href="{{mus.content_url}}">{{mus.museo}}</a></b><br>
+							Direccion: {{mus.clase_vial}} {{mus.nombre_via}} {{mus.num}} - {{mus.codigo_postal}} ({{mus.localidad}})<br>
+							Accesibilidad {{mus.accesibilidad}}<br>
+							</b><a style="color:#2ab9e7" href="/museos/{{mus.id}}">Más informacion</a></p>
+						{% endfor %}
+
+					{% else %}
+						<form method = 'POST' , action ='/'>
+							<input type="submit" name="submit" value="Mostrar museos accesibles"/>
+							<input type="hidden" name="num_accesible" value='1'/>
+						</form>
+
+						{% for mus in museos_BD %}
+							<p><b><a style="color: #fc8b52">NOMBRE MUSEO: <a style="color:#2ab9e7" href="{{mus.content_url}}">{{mus.museo}}</a></b><br>
+							Direccion: {{mus.clase_vial}} {{mus.nombre_via}} {{mus.num}} - {{mus.codigo_postal}} ({{mus.localidad}})<br>
+							</b><a style="color:#2ab9e7" href="/museos/{{mus.id}}">Más informacion</a></p>
+						{% endfor %}
+
+					{% endif %}
+
+				</font>
+
+			</div>
+
+			<div class="join_columns">
+			</div>
+
+			<div id="foot">
+				<center><h5><i><a style='color: #ffffff'>
+					Esta aplicación utiliza datos del portal de datos abiertos de la ciudad de Madrid.
+							<a href="https://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1
+							?vgnextoid=118f2fdbecc63410VgnVCM1000000b205a0aRCRD&vgnextchannel=
+							374512b9ace9f310VgnVCM100000171f5a0aRCRD&vgnextfmt=default" style='color: #CC2EFA'> Enlace al portal</a>__
+				</a></i></h5></center>
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

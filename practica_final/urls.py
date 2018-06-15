@@ -18,7 +18,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'(\d+)', 'museos.views.info_museos'),
+    url(r'^museos/(\d+)', 'museos.views.info_museo'),
+    url(r'^museos/','museos.views.mostrar_museos'),
     url(r'^about/', 'museos.views.about'),
     url(r'^$', 'museos.views.pag_principal'),
 ]

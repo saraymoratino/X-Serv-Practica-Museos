@@ -1,0 +1,77 @@
+{% load staticfiles %}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="http://1.bp.blogspot.com/-NJVva85kbH0/UqSGae7X3-I/AAAAAAAAFyg/EDnaBwqwuQM/s1600/el+grito+detalle+1.jpg" />
+		<link rel="stylesheet" type="text/css" href="{% static 'estilo.css' %}">
+	</head>
+
+
+	<body>
+
+		<div id="principal">
+
+			<div id="cabecera">
+				<form method = 'POST' action ='/login/'>
+					<p align="right">
+						<input type="text" size="14" maxlength="30" placeholder="Usuario" value="" name="usuario" autocomplete="off"><br>
+						<input type="Password" size="14" maxlength="30" placeholder="Contraseña" value="" name="contraseña" autocomplete="off"><br>
+						<input type="submit" name="submit" value="Login" />
+						<input type="submit" name="submit" value="Register" />
+					</p>
+				</form>
+
+			</div>
+
+			<div id="menu">
+				<ul align: center>
+					<li><a href="/">Inicio</a></li>
+					<li><a href="#">Area personal</a></li>
+					<li><a href="/museos">Museos</a></li>
+					<li><a href="/about">About</a></li>
+				</ul>
+			</div>
+
+			<div id="pag_personal">
+				<b><a style="color:#2ab9e7">PÁGINAS PERSONALES</a></b>
+			</div>
+
+			<div id="contenido">
+				<p><b><a style="color: #fc8b52">NOMBRE MUSEO: </b></a> {{mus.museo}}</p>
+				<p><b><a style="color: #fc8b52">ID ENTIDAD: </b></a> {{mus.id_entidad}}</p>
+				<p><b><a style="color: #fc8b52">DESCRIPCIÓN: </b></a> {{mus.descripcion}}</p>
+				<p><b><a style="color: #fc8b52">DESCRIPCIÓN ENTIDAD: </b></a> {{mus.descripcion_entidad}}</p>
+				<p><b><a style="color: #fc8b52">HORARIO: </b></a> {{mus.horario}}</p>
+				<p><b><a style="color: #fc8b52">TRANSPORTE: </b></a> {{mus.transporte}}</p>
+				<p><b><a style="color: #fc8b52">ACCESIBILIDAD: </b></a> {{mus.accesibilidad}}</p>
+				<p><b><a style="color: #fc8b52">URL: </b><a style="color: #2ab9e7" href="{{mus.content_url}}">{{mus.content_url}}</a></p>
+				<p><b><a style="color: #fc8b52">DIRECCIÓN: </b></a> {{mus.clase_vial}} {{mus.nombre_via}} {{mus.num}} - {{mus.codigo_postal}} ({{mus.localidad}})
+				<p><b><a style="color: #fc8b52">BARRIO: </b></a> {{mus.barrio}}</p>
+				<p><b><a style="color: #fc8b52">DISTRITO: </b></a> {{mus.distrito}}</p>
+				<p><b><a style="color: #fc8b52">COORDENADA X: </b></a> {{mus.coordenada_x}}</p>
+				<p><b><a style="color: #fc8b52">COORDENADA Y: </b></a> {{mus.coordenada_y}}</p>
+				<p><b><a style="color: #fc8b52">LATITUD: </b></a> {{mus.latitud}}</p>
+				<p><b><a style="color: #fc8b52">LONGITUD: </b></a> {{mus.longitud}}</p>
+				<p><b><a style="color: #fc8b52">TELEFONO: </b></a> {{mus.telefono}}</p>
+				<p><b><a style="color: #fc8b52">FAX: </b></a> {{mus.fax}}</p>
+				<p><b><a style="color: #fc8b52">EMAIL: </b></a> {{mus.email}}</p>
+			</div>
+
+
+			<div class="join_columns">
+			</div>
+
+			<div id="foot">
+				<center><h5><i><a style='color: #ffffff'>
+					Esta aplicación utiliza datos del portal de datos abiertos de la ciudad de Madrid.
+							<a href="https://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1
+							?vgnextoid=118f2fdbecc63410VgnVCM1000000b205a0aRCRD&vgnextchannel=
+							374512b9ace9f310VgnVCM100000171f5a0aRCRD&vgnextfmt=default" style='color: #CC2EFA'> Enlace al portal</a>_
+				</a></i></h5></center>
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

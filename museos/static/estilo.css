@@ -1,0 +1,73 @@
+body{
+}
+
+
+#principal{
+	width: 1150px;
+	border: 2px solid #ffffff;
+	margin: 0px auto;
+	background: #2a2623;
+}
+
+#Cabecera{
+	height: 150px;
+	border: 1px solid #000000;
+	margin: 20px 20px 0px 20px;
+	background-image: url("images/bannercabecera.jpg");
+}
+
+#menu{
+	height: 50px;
+	margin: 20px 100px 0 100px;
+	background: #fc8b52;
+}
+
+#menu ul li {
+	display: inline;
+	margin: 0px 25px;
+}
+
+#menu ul li a {
+	font-family: Arial;
+	font-size:25px;
+	text-decoration: none; /**Quito la linea del menu**/
+	color: black;
+	margin-left: 55px
+}
+
+#menu ul li a:hover {
+	background-color: #e76e4c;
+	padding-bottom:20px;
+}
+
+#pag_personal{
+	width: 300px;
+	border: 1px solid #000000;
+	margin: 10px 25px 10px 25px;
+	float: left;
+}
+
+#contenido{
+	width: 740px;
+	font-family: Arial;
+	font-size:15px;
+	border: 1px solid #000000;
+	margin: 10px 25px 10px 25px;
+	float: left;
+	color: #ffffff;
+}
+
+#contenido about{
+
+	
+}
+
+.join_columns{
+	clear: both;
+}
+
+#foot{
+	height: 70px;
+	border: 1px solid #000000;
+	margin: 10px 25px 10px 25px;
+}

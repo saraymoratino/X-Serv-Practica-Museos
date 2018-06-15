@@ -40,3 +40,4 @@ class comentario (models.Model):
 	usuario = models.TextField()
 	fecha = models.TextField()
 	texto = models.TextField()
+

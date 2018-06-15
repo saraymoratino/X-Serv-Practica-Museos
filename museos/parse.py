@@ -7,7 +7,8 @@ root = tree.getroot()
 #Creamos diccionario para guardar los parámetros de museo en museo
 #y lo guardamos de uno en uno en la base de dato.
 
-def create_BD (museos_BD):
+def create_BD ():
+    museos_BD = museos.objects.all()
     aux  = [False,False,False,False,False,False,False,False,False,False,False,False,
             False,False,False,False,False,False,False,False,False,False,False,False]
     if not museos_BD:
@@ -119,6 +120,8 @@ def create_BD (museos_BD):
                 aux  = [False,False,False,False,False,False,False,False,False,False,False,False,
                         False,False,False,False,False,False,False,False,False,False,False,False]
 
+        museos_BD = museos.objects.all()
+    return(museos_BD)
 
 if __name__ == "__main__":
     create_BD(museos_BD)
